@@ -1,5 +1,5 @@
 <?php
-include_once 'src/SrcConst.php';
+include_once 'resrc/src/SrcConst.php';
 
 class ImportHtml{
 	private $ht = ""; //html text
@@ -60,7 +60,11 @@ class ImportHtml{
 	}
 	
 	public function output(){
-		echo $this->getResult();
+	   if($this->ht == null){
+	      
+	   }else{
+	      echo $this->getResult();
+	   }
 	}
 	
 	public function getResult(){

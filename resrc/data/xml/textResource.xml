@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<texts>
+   <text name="title" label="webページ全体のタイトル" value="ペットショップグループ" />
+   <text name="outline1" label="ページの概要1" value="" />
+   <text name="outline2" label="ページの概要2" value="" />
+   <text name="copyright" label="copyright" value="&copy; website" />
+</texts>

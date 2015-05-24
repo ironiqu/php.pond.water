@@ -2,16 +2,20 @@
 
 class SrcConst{
 	
+	private static $webdocsPath = "resrc/webdocs/";
+	private static $dataPath = "resrc/data/";
+	
 	//text data(only hardcode)
+	/*
 	private static  $td = array(
-			/* under default text data */
+			// under default text data 
 			"pageTop" => "トップページ",
 			"pageHotel" => "ペットホテル",
 			"pageCafe" => "ペットカフェ",
 			"pagePet" => "ペット詳細",
 			"pageShop" => "店舗案内",
 			"pageQuestion" => "Q&amp;A",
-			/* under admin text data */
+			// under admin text data 
 			"adminTitle" => "ウェブページの管理",
 			"pageAdminCss" => "共通CSSの編集",
 			"pageAdminEvent" => "イベントページの追加・編集",
@@ -50,24 +54,27 @@ class SrcConst{
 			"questiontitle" => "質問",
 			"answer" => "回答"
 	);
+	*/
 	
 	public static function getTextData($name){
-		$r = array_key_exists($name, self::$td)?self::$td[$name]:"null";
+		//$r = array_key_exists($name, self::$td)?self::$td[$name]:"null";
+		$r = null;
 		
-		if ($r === "null") {
-			$xml = file_get_contents ( "src/textResource.xml" );
+		if ($r === null) {
+			$xml = file_get_contents ( self::$dataPath."xml/textResource.xml" );
 			$texts = new SimpleXMLElement ( $xml );
 			foreach ( $texts->text as $text ) {
 				if ((string)$text["name"] === $name)
-					$r = $text->value;
+					$r = $text["value"];
 			}
 		}
 		return $r;
 	}
+	
 
 	public static function getHtmlData($name){
-		$n = "layout/html/".$name.".html";
-		$r = "null";
+		$n = self::$webdocsPath."html/".$name.".html";
+		$r = null;
 		if (file_exists ( $n )) {
 			$r = file_get_contents ( $n );
 			$r = self::fixHtmlPlaceholder($r);
@@ -90,7 +97,7 @@ class SrcConst{
 	}
 	
 	public static function getStyleData($name){
-		$n = "layout/style/".$name.".css";
+		$n = self::$webdocsPath."style/".$name.".css";
 		$r = "";
 		if(file_exists($n))
 			$r = file_get_contents($n);
@@ -98,8 +105,8 @@ class SrcConst{
 	}
 	
 	public static function getPageData($name){
-		$n = "src/page/"."page".ucfirst($name).".php";
-		$r = "null";
+		$n = self::$webdocsPath."page/"."page".ucfirst($name).".php";
+		$r = null;
 		if (file_exists ( $n )) {
 			ob_start();
 			include $n;
