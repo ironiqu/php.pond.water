@@ -1,5 +1,9 @@
 <?php
-include_once 'src/ImportHtml.php';
+
+
+exit();
+
+include_once 'resrc/src/ImportHtml.php';
 
 session_start();
 session_regenerate_id();

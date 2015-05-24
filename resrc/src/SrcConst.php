@@ -58,9 +58,9 @@ class SrcConst{
 	
 	public static function getTextData($name){
 		//$r = array_key_exists($name, self::$td)?self::$td[$name]:"null";
-		$r = null;
+		$r = "";
 		
-		if ($r === null) {
+		if ($r == "") {
 			$xml = file_get_contents ( self::$dataPath."xml/textResource.xml" );
 			$texts = new SimpleXMLElement ( $xml );
 			foreach ( $texts->text as $text ) {
@@ -105,8 +105,8 @@ class SrcConst{
 	}
 	
 	public static function getPageData($name){
-		$n = self::$webdocsPath."page/"."page".ucfirst($name).".php";
-		$r = null;
+		$n = self::$webdocsPath."page/$name.php";
+		$r = "";
 		if (file_exists ( $n )) {
 			ob_start();
 			include $n;

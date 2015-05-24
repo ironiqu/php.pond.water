@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <texts>
-   <text name="title" label="webページ全体のタイトル" value="ペットショップグループ" />
-   <text name="outline1" label="ページの概要1" value="" />
-   <text name="outline2" label="ページの概要2" value="" />
-   <text name="copyright" label="copyright" value="&copy; website" />
+   <text name="title" label="webページ全体のタイトル" value="マイウェブサイト" />
+   <text name="description" label="ページの詳細" value="私のウェブサイト" />
+   <text name="keywords" label="ページの詳細" value="web,website,site,mypage" />
+   <text name="outline1" label="ページの概要1" value="ページ概要１" />
+   <text name="outline2" label="ページの概要2" value="ページ概要２" />
+   <text name="copyright" label="copyright" value="&amp;copy; website" />
 </texts>

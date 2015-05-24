@@ -61,9 +61,9 @@ class ImportHtml{
 	
 	public function output(){
 	   if($this->ht == null){
-	      
+	      return null;
 	   }else{
-	      echo $this->getResult();
+	      return $this->getResult();
 	   }
 	}
 	

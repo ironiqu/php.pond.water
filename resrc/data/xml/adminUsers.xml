@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<admins>
+	<admin id="administrator" root="true">
+		<passHash mode="sha256"></passHash>
+	</admin>
+</admins>
